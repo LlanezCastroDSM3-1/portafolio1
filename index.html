@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 
 <html lang="es">
@@ -10,96 +11,332 @@
 
   <title>Llanez Castro Rosalva Jazmin · Portafolio</title>
 
+  <style>
+
+    /* Estilos generales */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f3ff;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* Encabezado */
+    header {
+      background: linear-gradient(135deg, #6c4ab6, #9b7ede);
+      color: white;
+      text-align: center;
+      padding: 50px 20px;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      margin-bottom: 25px;
+    }
+
+    /* Menú */
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 8px 15px;
+      border-radius: 20px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      background-color: white;
+      color: #6c4ab6;
+    }
+
+    /* Contenido */
+    main {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    section {
+      background-color: white;
+      padding: 30px;
+      margin-bottom: 30px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    }
+
+    h2 {
+      color: #6c4ab6;
+      margin-bottom: 15px;
+      border-bottom: 2px solid #d8cdf5;
+      padding-bottom: 8px;
+    }
+
+    /* Skills */
+    #skills {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    #skills h2 {
+      grid-column: 1 / -1;
+    }
+
+    article {
+      background-color: #f0ebff;
+      padding: 20px;
+      border-radius: 12px;
+      border-left: 5px solid #6c4ab6;
+      transition: 0.3s;
+    }
+
+    article:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    article h3 {
+      color: #6c4ab6;
+      margin-bottom: 8px;
+    }
+
+    /* Formulario */
+    #formulario {
+      max-width: 700px;
+      margin: 0 auto 30px auto;
+    }
+
+    #formulario form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    #formulario label {
+      font-weight: bold;
+      color: #6c4ab6;
+    }
+
+    #formulario input,
+    #formulario textarea {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #d8cdf5;
+      border-radius: 8px;
+      font-family: Arial, sans-serif;
+      font-size: 1rem;
+      outline: none;
+    }
+
+    #formulario input:focus,
+    #formulario textarea:focus {
+      border-color: #6c4ab6;
+    }
+
+    #formulario textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    #formulario button {
+      background-color: #6c4ab6;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+      margin-top: 10px;
+    }
+
+    #formulario button:hover {
+      background-color: #50368a;
+    }
+
+    /* Pie de página */
+    footer {
+      background-color: #2d2342;
+      color: white;
+      text-align: center;
+      padding: 35px 20px;
+    }
+
+    footer h2 {
+      color: white;
+      border: none;
+    }
+
+    footer p {
+      margin: 8px 0;
+    }
+
+    /* Adaptación para celulares */
+    @media (max-width: 600px) {
+
+      header h1 {
+        font-size: 2rem;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      section {
+        padding: 20px;
+      }
+
+    }
+
+  </style>
+
 </head>
 
 <body>
 
   <header>
 
-```
-<h1>Llanez Castro Rosalva Jazmin</h1>
+    <h1>Llanez Castro Rosalva Jazmin</h1>
 
-<p>Estudiante de Desarrollo Web · UTH</p>
+    <p>Estudiante de Desarrollo Web · UTH</p>
 
-<nav>
+    <nav>
 
-  <ul>
+      <ul>
 
-    <li><a href="#sobre-mi">Sobre mí</a></li>
+        <li><a href="#sobre-mi">Sobre mí</a></li>
 
-    <li><a href="#skills">Skills</a></li>
+        <li><a href="#skills">Skills</a></li>
 
-    <li><a href="#contacto">Contacto</a></li>
+        <li><a href="#formulario">Contacto</a></li>
 
-  </ul>
+      </ul>
 
-</nav>
-```
+    </nav>
 
   </header>
 
   <main>
 
-```
-<section id="sobre-mi">
+    <section id="sobre-mi">
 
-  <h2>Sobre mí</h2>
+      <h2>Sobre mí</h2>
 
-  <p>
-    Soy estudiante de la Universidad Tecnológica de Hermosillo (UTH),
-    donde estudio Ingeniería en Tecnologías de la Información e Innovación Digital.
-    Me interesa el desarrollo web y la creación de interfaces funcionales,
-    accesibles y fáciles de utilizar. También me interesa aprender nuevas
-    tecnologías para desarrollar proyectos digitales.
-  </p>
+      <p>
+        Soy estudiante de la Universidad Tecnológica de Hermosillo (UTH),
+        donde estudio Ingeniería en Tecnologías de la Información e Innovación Digital.
+        Me interesa el desarrollo web y la creación de interfaces funcionales,
+        accesibles y fáciles de utilizar. También me interesa aprender nuevas
+        tecnologías para desarrollar proyectos digitales.
+      </p>
 
-</section>
+    </section>
 
-<section id="skills">
+    <section id="skills">
 
-  <h2>Skills</h2>
+      <h2>Skills</h2>
 
-  <article>
+      <article>
 
-    <h3>HTML5</h3>
+        <h3>HTML5</h3>
 
-    <p>Creación de estructuras semánticas y organización de páginas web.</p>
+        <p>Creación de estructuras semánticas y organización de páginas web.</p>
 
-  </article>
+      </article>
 
-  <article>
+      <article>
 
-    <h3>Tailwind CSS</h3>
+        <h3>Tailwind CSS</h3>
 
-    <p>Diseño de interfaces responsivas utilizando clases utility-first.</p>
+        <p>Diseño de interfaces responsivas utilizando clases utility-first.</p>
 
-  </article>
+      </article>
 
-  <article>
+      <article>
 
-    <h3>Git & GitHub</h3>
+        <h3>Git & GitHub</h3>
 
-    <p>Control de versiones, administración de repositorios y colaboración en proyectos.</p>
+        <p>Control de versiones, administración de repositorios y colaboración en proyectos.</p>
 
-  </article>
+      </article>
 
-</section>
-```
+    </section>
+
+    <!-- Formulario de contacto -->
+    <section id="formulario">
+
+      <h2>Contáctame</h2>
+
+      <form>
+
+        <label for="nombre">Nombre:</label>
+
+        <input 
+          type="text" 
+          id="nombre" 
+          name="nombre" 
+          placeholder="Escribe tu nombre" 
+          required
+        >
+
+        <label for="correo">Correo electrónico:</label>
+
+        <input 
+          type="email" 
+          id="correo" 
+          name="correo" 
+          placeholder="ejemplo@correo.com" 
+          required
+        >
+
+        <label for="mensaje">Mensaje:</label>
+
+        <textarea 
+          id="mensaje" 
+          name="mensaje" 
+          placeholder="Escribe tu mensaje"
+          required
+        ></textarea>
+
+        <button type="submit">Enviar mensaje</button>
+
+      </form>
+
+    </section>
 
   </main>
 
-  <footer id="contacto">
+  <footer>
 
-```
-<h2>Contacto</h2>
+    <h2>Contacto</h2>
 
-<p>rosalva.jazmin.llanez@gmail.com</p>
+    <p>rosalva.jazmin.llanez@gmail.com</p>
 
-<p>© 2026 Llanez Castro Rosalva Jazmin</p>
-```
+    <p>© 2026 Llanez Castro Rosalva Jazmin</p>
 
   </footer>
 
 </body>
 
 </html>
+```
