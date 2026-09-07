@@ -1,342 +1,270 @@
-```html
+<!-- DOCTYPE: le dice al navegador que interprete esto como HTML5 -->
 <!DOCTYPE html>
-
+<!-- html: la raíz del documento; lang="es" ayuda a lectores de pantalla y buscadores -->
 <html lang="es">
-
+<!-- head: metadatos que el navegador necesita pero que NO se ven en la página -->
 <head>
-
+  <!-- UTF-8: permite escribir tildes y ñ sin que se rompan -->
   <meta charset="UTF-8">
-
+  <!-- viewport: hace que la página se adapte al ancho de un celular -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- title: el texto que aparece en la pestaña del navegador -->
+  <title>[Tu Nombre] · Portafolio</title>
+<!-- cierre de head: termina la zona de metadatos -->
+</head>
+<!-- body: todo lo que SÍ se ve en pantalla va acá dentro -->
+<body>
 
-  <title>Llanez Castro Rosalva Jazmin · Portafolio</title>
+  <!-- header: cabecera de la página, va una sola vez -->
+  <header>
+    <!-- h1: el único título principal de toda la página -->
+    <h1>[Tu Nombre]</h1>
+    <!-- p: subtítulo descriptivo, no cuenta como encabezado -->
+    <p>[Estudiante de Desarrollo Web · UTH]</p>
+    <!-- nav: agrupa los enlaces de navegación interna -->
+    <nav>
+      <!-- ul: lista no ordenada que contiene los enlaces -->
+      <ul>
+        <!-- li + a: cada ítem es un enlace; href="#sobre-mi" salta al id igual más abajo -->
+        <li><a href="#sobre-mi">Sobre mí</a></li>
+        <!-- salta a la sección con id="skills" -->
+        <li><a href="#skills">Skills</a></li>
+        <!-- salta al footer con id="contacto" -->
+        <li><a href="#contacto">Contacto</a></li>
+      <!-- cierre de la lista -->
+      </ul>
+    <!-- cierre de nav -->
+    </nav>
+  <!-- cierre de header -->
+  </header>
 
-  <style>
+  <!-- main: el contenido único de la página, una sola vez -->
+  <main>
+    <!-- section con id="sobre-mi": acá aterriza el primer enlace del nav -->
+    <section id="sobre-mi">
+      <!-- h2: título propio de esta sección -->
+      <h2>Sobre mí</h2>
+      <!-- p: tu texto de presentación -->
+      <p>[2-3 frases: quién sos, qué estás estudiando, qué te interesa del desarrollo web.]</p>
+    <!-- cierre de la sección "sobre-mi" -->
+    </section>
 
-    /* Estilos generales */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    <!-- section con id="skills": acá aterriza el segundo enlace del nav -->
+    <section id="skills">
+      <!-- h2: título propio de esta sección -->
+      <h2>Skills</h2>
+      <!-- article: cada skill tiene sentido leída sola, por eso NO es un div -->
+      <article>
+        <!-- h3: un nivel debajo del h2 de la sección -->
+        <h3>HTML5</h3>
+        <p>Estructura semántica de páginas web.</p>
+      <!-- cierre de este article -->
+      </article>
+      <!-- segundo article: mismo patrón, otra skill -->
+      <article>
+        <h3>Tailwind CSS</h3>
+        <p>Estilos responsivos utility-first.</p>
+      </article>
+      <!-- tercer article: mismo patrón, otra skill -->
+      <article>
+        <h3>Git & GitHub</h3>
+        <p>Control de versiones y despliegue.</p>
+      </article>
+    <!-- cierre de la sección "skills" -->
+    </section>
+  <!-- cierre de main -->
+  </main>
 
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f5f3ff;
-      color: #333;
-      line-height: 1.6;
-    }
+  <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de contacto</title>
 
-    /* Encabezado */
-    header {
-      background: linear-gradient(135deg, #6c4ab6, #9b7ede);
-      color: white;
-      text-align: center;
-      padding: 50px 20px;
-    }
+    <style>
+        * {
+            box-sizing: border-box;
+        }
 
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-    }
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            color: #222;
+        }
 
-    header p {
-      font-size: 1.1rem;
-      margin-bottom: 25px;
-    }
+        main {
+            max-width: 500px;
+            margin: 30px auto;
+            padding: 30px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px #00000015;
+        }
 
-    /* Menú */
-    nav ul {
-      list-style: none;
-      display: flex;
-      justify-content: center;
-      gap: 25px;
-    }
+        h1 {
+            margin-top: 0;
+            text-align: center;
+        }
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      padding: 8px 15px;
-      border-radius: 20px;
-      transition: 0.3s;
-    }
+        label {
+            display: block;
+            margin-top: 18px;
+            margin-bottom: 6px;
+            font-weight: bold;
+        }
 
-    nav a:hover {
-      background-color: white;
-      color: #6c4ab6;
-    }
+        input,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #767676;
+            border-radius: 5px;
+            font: inherit;
+        }
 
-    /* Contenido */
-    main {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
+        textarea {
+            resize: vertical;
+        }
 
-    section {
-      background-color: white;
-      padding: 30px;
-      margin-bottom: 30px;
-      border-radius: 15px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-    }
+        input:focus,
+        textarea:focus {
+            outline: 2px solid #005fcc;
+            outline-offset: 2px;
+        }
 
-    h2 {
-      color: #6c4ab6;
-      margin-bottom: 15px;
-      border-bottom: 2px solid #d8cdf5;
-      padding-bottom: 8px;
-    }
+        button {
+            width: 100%;
+            margin-top: 20px;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            background-color: #005fcc;
+            color: white;
+            font: inherit;
+            cursor: pointer;
+        }
 
-    /* Skills */
-    #skills {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-    }
+        button:hover {
+            background-color: #004799;
+        }
 
-    #skills h2 {
-      grid-column: 1 / -1;
-    }
+        button:focus-visible {
+            outline: 2px solid #222;
+            outline-offset: 3px;
+        }
 
-    article {
-      background-color: #f0ebff;
-      padding: 20px;
-      border-radius: 12px;
-      border-left: 5px solid #6c4ab6;
-      transition: 0.3s;
-    }
+        small {
+            display: block;
+            margin-top: 5px;
+            color: #555;
+        }
 
-    article:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-    }
-
-    article h3 {
-      color: #6c4ab6;
-      margin-bottom: 8px;
-    }
-
-    /* Formulario */
-    #formulario {
-      max-width: 700px;
-      margin: 0 auto 30px auto;
-    }
-
-    #formulario form {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    #formulario label {
-      font-weight: bold;
-      color: #6c4ab6;
-    }
-
-    #formulario input,
-    #formulario textarea {
-      width: 100%;
-      padding: 12px;
-      border: 2px solid #d8cdf5;
-      border-radius: 8px;
-      font-family: Arial, sans-serif;
-      font-size: 1rem;
-      outline: none;
-    }
-
-    #formulario input:focus,
-    #formulario textarea:focus {
-      border-color: #6c4ab6;
-    }
-
-    #formulario textarea {
-      min-height: 120px;
-      resize: vertical;
-    }
-
-    #formulario button {
-      background-color: #6c4ab6;
-      color: white;
-      border: none;
-      padding: 12px;
-      border-radius: 8px;
-      font-size: 1rem;
-      font-weight: bold;
-      cursor: pointer;
-      transition: 0.3s;
-      margin-top: 10px;
-    }
-
-    #formulario button:hover {
-      background-color: #50368a;
-    }
-
-    /* Pie de página */
-    footer {
-      background-color: #2d2342;
-      color: white;
-      text-align: center;
-      padding: 35px 20px;
-    }
-
-    footer h2 {
-      color: white;
-      border: none;
-    }
-
-    footer p {
-      margin: 8px 0;
-    }
-
-    /* Adaptación para celulares */
-    @media (max-width: 600px) {
-
-      header h1 {
-        font-size: 2rem;
-      }
-
-      nav ul {
-        flex-direction: column;
-        gap: 10px;
-      }
-
-      section {
-        padding: 20px;
-      }
-
-    }
-
-  </style>
-
+        #resultado {
+            color: #176232;
+            font-weight: bold;
+        }
+    </style>
 </head>
 
 <body>
+    <main>
+        <h1>Contacto</h1>
+        <p>Completa el formulario. Todos los campos son obligatorios,
+           excepto el teléfono.</p>
 
-  <header>
+        <form id="formulario">
+            <label for="nombre">Nombre:</label>
+            <input
+                type="text"
+                id="nombre"
+                name="nombre"
+                placeholder="Escribe tu nombre"
+                autocomplete="name"
+                minlength="3"
+                maxlength="60"
+                required
+            >
 
-    <h1>Llanez Castro Rosalva Jazmin</h1>
+            <label for="correo">Correo electrónico:</label>
+            <input
+                type="email"
+                id="correo"
+                name="correo"
+                placeholder="ejemplo@correo.com"
+                autocomplete="email"
+                required
+            >
 
-    <p>Estudiante de Desarrollo Web · UTH</p>
+            <label for="telefono">Teléfono (opcional):</label>
+            <input
+                type="tel"
+                id="telefono"
+                name="telefono"
+                placeholder="6621234567"
+                autocomplete="tel"
+                inputmode="numeric"
+                pattern="[0-9]{10}"
+                maxlength="10"
+                title="Escribe exactamente 10 dígitos sin espacios ni guiones"
+                aria-describedby="ayuda-telefono"
+            >
+            <small id="ayuda-telefono">
+                Escribe 10 dígitos sin espacios ni guiones.
+            </small>
 
-    <nav>
+            <label for="mensaje">Mensaje:</label>
+            <textarea
+                id="mensaje"
+                name="mensaje"
+                rows="5"
+                placeholder="Escribe tu mensaje"
+                minlength="10"
+                maxlength="500"
+                aria-describedby="ayuda-mensaje"
+                required
+            ></textarea>
+            <small id="ayuda-mensaje">
+                Entre 10 y 500 caracteres.
+            </small>
 
-      <ul>
+            <button type="submit">Validar formulario</button>
+        </form>
 
-        <li><a href="#sobre-mi">Sobre mí</a></li>
+        <p id="resultado" role="status"></p>
+    </main>
 
-        <li><a href="#skills">Skills</a></li>
+    <script>
+        const formulario = document.getElementById("formulario");
+        const resultado = document.getElementById("resultado");
 
-        <li><a href="#formulario">Contacto</a></li>
+        formulario.addEventListener("submit", function(evento) {
+            evento.preventDefault();
 
-      </ul>
+            resultado.textContent =
+                "Datos válidos. Esta práctica no envía mensajes.";
+        });
 
-    </nav>
+        formulario.addEventListener("input", function() {
+            resultado.textContent = "";
+        });
+    </script>
+</body>
+</html>
 
-  </header>
-
-  <main>
-
-    <section id="sobre-mi">
-
-      <h2>Sobre mí</h2>
-
-      <p>
-        Soy estudiante de la Universidad Tecnológica de Hermosillo (UTH),
-        donde estudio Ingeniería en Tecnologías de la Información e Innovación Digital.
-        Me interesa el desarrollo web y la creación de interfaces funcionales,
-        accesibles y fáciles de utilizar. También me interesa aprender nuevas
-        tecnologías para desarrollar proyectos digitales.
-      </p>
-
-    </section>
-
-    <section id="skills">
-
-      <h2>Skills</h2>
-
-      <article>
-
-        <h3>HTML5</h3>
-
-        <p>Creación de estructuras semánticas y organización de páginas web.</p>
-
-      </article>
-
-      <article>
-
-        <h3>Tailwind CSS</h3>
-
-        <p>Diseño de interfaces responsivas utilizando clases utility-first.</p>
-
-      </article>
-
-      <article>
-
-        <h3>Git & GitHub</h3>
-
-        <p>Control de versiones, administración de repositorios y colaboración en proyectos.</p>
-
-      </article>
-
-    </section>
-
-    <!-- Formulario de contacto -->
-    <section id="formulario">
-
-      <h2>Contáctame</h2>
-
-      <form>
-
-        <label for="nombre">Nombre:</label>
-
-        <input 
-          type="text" 
-          id="nombre" 
-          name="nombre" 
-          placeholder="Escribe tu nombre" 
-          required
-        >
-
-        <label for="correo">Correo electrónico:</label>
-
-        <input 
-          type="email" 
-          id="correo" 
-          name="correo" 
-          placeholder="ejemplo@correo.com" 
-          required
-        >
-
-        <label for="mensaje">Mensaje:</label>
-
-        <textarea 
-          id="mensaje" 
-          name="mensaje" 
-          placeholder="Escribe tu mensaje"
-          required
-        ></textarea>
-
-        <button type="submit">Enviar mensaje</button>
-
-      </form>
-
-    </section>
-
-  </main>
-
-  <footer>
-
+  <!-- footer con id="contacto": acá aterriza el tercer enlace; va una sola vez, al final -->
+  <footer id="contacto">
     <h2>Contacto</h2>
-
-    <p>rosalva.jazmin.llanez@gmail.com</p>
-
-    <p>© 2026 Llanez Castro Rosalva Jazmin</p>
-
+    <!-- reemplazá por tu correo real -->
+    <p>[tu-correo@ejemplo.com]</p>
+    <!-- &copy; genera el símbolo © -->
+    <p>© 2026 [Tu Nombre]</p>
+  <!-- cierre del footer -->
   </footer>
 
+<!-- cierre de body -->
 </body>
-
+<!-- cierre de html: fin del documento -->
 </html>
-```
